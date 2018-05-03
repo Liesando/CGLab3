@@ -1,9 +1,6 @@
 package com.azzgil.cglab3;
 
-import com.jogamp.opengl.GLAutoDrawable;
-import com.jogamp.opengl.GLCapabilities;
-import com.jogamp.opengl.GLEventListener;
-import com.jogamp.opengl.GLProfile;
+import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
 
 import javax.swing.*;
@@ -19,7 +16,12 @@ public class CGLab3 implements GLEventListener {
     }
 
     public void display(GLAutoDrawable glAutoDrawable) {
-
+        GL2 gl = glAutoDrawable.getGL().getGL2();
+        gl.glBegin(GL2.GL_TRIANGLES);
+        gl.glVertex3d(0.5, -0.5, 0);
+        gl.glVertex3d(-0.5, 0.5, 0);
+        gl.glVertex3d(0.5, 0.5, 0);
+        gl.glEnd();
     }
 
     public void reshape(GLAutoDrawable glAutoDrawable, int i, int i1, int i2, int i3) {
